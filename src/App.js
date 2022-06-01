@@ -1,6 +1,7 @@
 import './App.css';
 import {useState} from 'react'
 import Budget from './components/Budget'
+import FixedCosts from './components/FixedCosts';
 
 function App() {
 
@@ -16,9 +17,11 @@ function App() {
     <div className="App">
 
       <div>
-        <Budget 
-        newBudget={newBudget}
-        />
+        <Budget newBudget={newBudget}/>
+      </div>
+
+      <div>
+        <FixedCosts />
       </div>
  
       <div>
