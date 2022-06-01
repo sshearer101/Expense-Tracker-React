@@ -1,34 +1,26 @@
 import './App.css';
 import {useState} from 'react'
+import Budget from './components/Budget'
 
 function App() {
 
-  const [details, setDetails] = useState()
   const [budget, setBudget] = useState()
 
   function newBudget(e){
-    e.preventDefault()
     console.log('new budget')
-    setBudget(details)
+    setBudget(e)
   }
 
 
   return (
     <div className="App">
-      <form >
-        <h2>Budget</h2>
-        <div>
-          <input
-            placeholder='set your budget here'
-            onChange={(e) => setDetails(e.target.value)}
-          >
-          </input>
-          <input
-            type="submit"
-            onClick={(e) => newBudget(e)}
-          ></input>
-        </div>
-      </form>
+
+      <div>
+        <Budget 
+        newBudget={newBudget}
+        />
+      </div>
+ 
       <div>
         <h2>Your Monthly Budget</h2>
         <h3>${budget}</h3>
