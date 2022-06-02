@@ -5,14 +5,16 @@ import FixedCosts from './components/FixedCosts';
 
 function App() {
 
-  const [budget, setBudget] = useState()
+  const [budget, setBudget] = useState(0)
 
   function newBudget(e){
     console.log('new budget')
     setBudget(e)
   }
 
-
+  function fixedCostBudget(e){
+    setBudget(budget - e.price)
+  }
   return (
     <div className="App">
 
@@ -21,13 +23,14 @@ function App() {
       </div>
 
       <div>
-        <FixedCosts />
+        <FixedCosts fixedCostBudget={fixedCostBudget}/>
       </div>
  
       <div>
         <h2>Your Monthly Budget</h2>
         <h3>${budget}</h3>
       </div>
+   
 
     </div>
   );
@@ -40,8 +43,6 @@ export default App;
 //input for establishing budget
 
 
-//create form for fixed costs
-  // form includes item, price
 
 
 //create form for additional expenses
