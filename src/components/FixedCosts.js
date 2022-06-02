@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import FixedCostsItem from './FixedCostsItems'
+import FixedCostsItems from './FixedCostsItems'
 
 export default function FixedCosts({fixedCostBudget}){
 
@@ -46,10 +46,14 @@ export default function FixedCosts({fixedCostBudget}){
       <div>
         <h2>Fixed Income Items</h2>
         {/* <h3>{fixedCosts.item}</h3> */}
-        {/* {fixedCosts.map((x) => {
-            
-        })} */}
-
+        <div>
+        {fixedItems.map(item => 
+            <FixedCostsItems 
+                key={item.id}
+                item={item}
+            />
+        )}
+        </div>
       </div>
         </div>
     )

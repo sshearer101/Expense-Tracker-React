@@ -6,11 +6,14 @@ import FixedCosts from './components/FixedCosts';
 function App() {
 
   const [budget, setBudget] = useState(0)
+  const [savings, setSavings] = useState(0)
 
   function newBudget(e){
     console.log('new budget')
     setBudget(e)
+    setSavings(e/10)
   }
+  console.log(savings)
 
   function fixedCostBudget(e){
     setBudget(budget - e.price)
@@ -29,6 +32,11 @@ function App() {
       <div>
         <h2>Your Monthly Budget</h2>
         <h3>${budget}</h3>
+      </div>
+
+      <div>
+        <h2>Your Recommended Monthly Savings</h2>
+        <h3>${savings}</h3>
       </div>
    
 
