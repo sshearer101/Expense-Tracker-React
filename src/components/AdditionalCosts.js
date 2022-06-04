@@ -1,30 +1,29 @@
 import {useState} from 'react'
-import FixedCostsItems from './FixedCostsItems'
+import AdditionalCostsItems from './AdditionalCostsItems'
 
-export default function FixedCosts({costBudget}){
+export default function AdditionalCosts({costBudget}){
 
-    const [fixedCosts, setFixedCosts] = useState([{item: "", price: ""}])
-    const [fixedItems, setFixedItems] = useState([])
+    const [additionalCosts, setAdditionalCosts] = useState([{item: "", price: ""}])
+    const [additionalItems, setAdditionalItems] = useState([])
 
     function handleSubmit(e){
         e.preventDefault()
-        costBudget(fixedCosts)
-        setFixedItems([...fixedItems, fixedCosts])
+        costBudget(additionalCosts)
+        setAdditionalItems([...additionalItems, additionalCosts])
     }
-
 
     return(
         <div>
      <form onSubmit={handleSubmit} className='fixed-costs-form'>
-        <h2 className='title'>Fixed Costs</h2>
+        <h2 className='title'>Additional Costs</h2>
         <div>
           <label>Item:</label>
           <input
             type="text"
             name="item"
             id="item"
-            onChange={(e) => setFixedCosts({...fixedCosts, item: e.target.value})}
-            value={fixedCosts.item}
+            onChange={(e) => setAdditionalCosts({...additionalCosts, item: e.target.value})}
+            value={additionalCosts.item}
           >
           </input>
         </div>
@@ -34,8 +33,8 @@ export default function FixedCosts({costBudget}){
             type="text"
             name="price"
             id="price"
-            onChange={(e) => setFixedCosts({...fixedCosts, price: e.target.value})}
-            value={fixedCosts.price}
+            onChange={(e) => setAdditionalCosts({...additionalCosts, price: e.target.value})}
+            value={additionalCosts.price}
           >
           </input>
         </div>
@@ -47,8 +46,8 @@ export default function FixedCosts({costBudget}){
         <h2>Fixed Income Items</h2>
         {/* <h3>{fixedCosts.item}</h3> */}
         <div>
-        {fixedItems.map(item => 
-            <FixedCostsItems 
+        {additionalItems.map(item => 
+            <AdditionalCostsItems 
                 key={item.id}
                 item={item}
             />

@@ -2,6 +2,7 @@ import './App.css';
 import {useState} from 'react'
 import Budget from './components/Budget'
 import FixedCosts from './components/FixedCosts';
+import AdditionalCosts from './components/AdditionalCosts';
 
 function App() {
 
@@ -13,28 +14,34 @@ function App() {
     setBudget(e)
     setSavings(e/10)
   }
-  console.log(savings)
 
-  function fixedCostBudget(e){
+  function costBudget(e){
     setBudget(budget - e.price)
   }
+
+
+  
   return (
     <div className="App">
 
-      <div>
+      <div className="budget-div">
         <Budget newBudget={newBudget}/>
       </div>
 
-      <div>
-        <FixedCosts fixedCostBudget={fixedCostBudget}/>
+      <div className="fixed-cost-div">
+        <FixedCosts costBudget={costBudget}/>
       </div>
  
-      <div>
+      <div className="additional-cost-div">
+        <AdditionalCosts costBudget={costBudget}/>
+      </div>
+
+      <div className='monthly-budget'>
         <h2>Your Monthly Budget</h2>
         <h3>${budget}</h3>
       </div>
 
-      <div>
+      <div className='savings'>
         <h2>Your Recommended Monthly Savings</h2>
         <h3>${savings}</h3>
       </div>

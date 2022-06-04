@@ -11,8 +11,8 @@ export default function Budget({newBudget}){
  
     return(
         <div>
-        <form onSubmit={handleSubmit}>
-        <h2>Budget</h2>
+        <form onSubmit={handleSubmit} className='budget-form'>
+        <h2 className="title">Budget</h2>
         <div>
           <input
             placeholder='set your budget here'

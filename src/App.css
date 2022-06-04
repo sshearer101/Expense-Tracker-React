@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+
+.fixed-cost-div{
+  display: inline-flex;
+}
+
+.budget-div{
+  display: inline-flex;
+}
+
+.monthly-budget{
+  display: block;
+}
+
+.savings{
+  display: block;
+
+}
+
+.budget-form{
+
+}
+
+.title{
+  
+}
+
+.fixed-costs-form{
+
+}
+
+.item-div{
+
+}
+
+.item-title{
+
+}
+
+.item-price{
+
+}
