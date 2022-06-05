@@ -43,7 +43,7 @@ export default function FixedCosts({costBudget}){
             type="submit"
           ></input>
       </form>
-      <div>
+      <div className='item-container'>
         <h2>Fixed Income Items</h2>
         {/* <h3>{fixedCosts.item}</h3> */}
         <div>

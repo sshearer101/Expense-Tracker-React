@@ -3,7 +3,7 @@ import AdditionalCostsItems from './AdditionalCostsItems'
 
 export default function AdditionalCosts({costBudget}){
 
-    const [additionalCosts, setAdditionalCosts] = useState([{item: "", price: ""}])
+    const [additionalCosts, setAdditionalCosts] = useState([{item: "", price: "", importance: ""}])
     const [additionalItems, setAdditionalItems] = useState([])
 
     function handleSubmit(e){
@@ -14,7 +14,7 @@ export default function AdditionalCosts({costBudget}){
 
     return(
         <div>
-     <form onSubmit={handleSubmit} className='fixed-costs-form'>
+     <form onSubmit={handleSubmit} className='additional-costs-form'>
         <h2 className='title'>Additional Costs</h2>
         <div>
           <label>Item:</label>
@@ -38,12 +38,25 @@ export default function AdditionalCosts({costBudget}){
           >
           </input>
         </div>
+        <div>
+          <label>Importance:</label>
+          <input
+            type="range"
+            name="importance"
+            id="importance"
+            min="0"
+            max="10"
+            onChange={(e) => setAdditionalCosts({...additionalCosts, importance: e.target.value})}
+            value={additionalCosts.importance}
+          >
+          </input>
+        </div>
           <input
             type="submit"
           ></input>
       </form>
-      <div>
-        <h2>Fixed Income Items</h2>
+      <div className="item-container">
+        <h2>Additional Income Items</h2>
         {/* <h3>{fixedCosts.item}</h3> */}
         <div>
         {additionalItems.map(item => 

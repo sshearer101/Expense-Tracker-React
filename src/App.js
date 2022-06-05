@@ -17,6 +17,7 @@ function App() {
 
   function costBudget(e){
     setBudget(budget - e.price)
+    console.log(e)
   }
 
 
@@ -39,13 +40,15 @@ function App() {
       <div className='monthly-budget'>
         <h2>Your Monthly Budget</h2>
         <h3>${budget}</h3>
-      </div>
-
-      <div className='savings'>
         <h2>Your Recommended Monthly Savings</h2>
         <h3>${savings}</h3>
       </div>
-   
+
+      {/* <div className='savings'>
+        <h2>Your Recommended Monthly Savings</h2>
+        <h3>${savings}</h3>
+      </div>
+    */}
 
     </div>
   );
