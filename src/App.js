@@ -24,6 +24,9 @@ function App() {
   
   return (
     <div className="App">
+      <div className="intro">
+        Insert your information in each relevant field in order to track your monthly finances.
+      </div>
 
       <div className="budget-div">
         <Budget newBudget={newBudget}/>

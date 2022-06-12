@@ -15,7 +15,7 @@ export default function Budget({newBudget}){
         <h2 className="title">Budget</h2>
         <div>
           <input
-            placeholder='set your budget here'
+            placeholder='set your budget'
             onChange={(e) => setFinance(e.target.value)}
           >
           </input>
