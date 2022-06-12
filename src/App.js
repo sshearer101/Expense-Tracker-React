@@ -27,7 +27,7 @@ function App() {
       <div className="intro">
         Insert your information in each relevant field in order to track your monthly finances.
       </div>
-
+      <div className='input-divs'>
       <div className="budget-div">
         <Budget newBudget={newBudget}/>
       </div>
@@ -39,7 +39,7 @@ function App() {
       <div className="additional-cost-div">
         <AdditionalCosts costBudget={costBudget}/>
       </div>
-
+      </div>
       <div className='monthly-budget'>
         <h2>Your Monthly Budget</h2>
         <h3>${budget}</h3>

@@ -29,7 +29,7 @@ label{
 
 input{
   display: block;
-  width: 20%;
+  width: 60%;
   padding: 10px 15px;
   /* background-color: #f8f8f8; */
   border-radius: 8px;
@@ -58,11 +58,15 @@ form input[type="submit"]{
   color: white;
   font-weight: 700;
   cursor: pointer;
-  width: 10%;
+  /* width: 10%; */
 }
 
 .intro{
   width: 50%
+}
+
+.input-divs{
+  display: inline-flex;
 }
 .fixed-cost-div{
 }
@@ -75,7 +79,7 @@ form input[type="submit"]{
 }
 
 .monthly-budget{
-
+  display: inline-flex;
 }
 
 .savings{
