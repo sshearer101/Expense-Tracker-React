@@ -57,7 +57,7 @@ export default function AdditionalCosts({costBudget, allAdditionalItems}){
             type="submit"
           ></input>
       </form>
-      <div className="item-container">
+      {/* <div className="item-container"> */}
         {/* <h2>Additional Income Items</h2> */}
         {/* <h3>{fixedCosts.item}</h3> */}
         {/* <div>
@@ -68,7 +68,7 @@ export default function AdditionalCosts({costBudget, allAdditionalItems}){
             />
         )}
         </div> */}
-      </div>
+      {/* </div> */}
         </div>
     )
 }

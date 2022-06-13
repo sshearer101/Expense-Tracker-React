@@ -4,6 +4,7 @@
   justify-content: center; 
   /* background-color: #53565A; */
   padding: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 form{
@@ -78,14 +79,29 @@ form input[type="submit"]{
 .input-divs{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2%;
 }
 
 
 .item-container{
   display: inline-flex;
-  border: 1px solid black;
-  position: absolute;
-  bottom: 30px;
+  /* border: 1px solid black; */
+  float: right;
+  width: 45%;
+  padding: 5px;
+  justify-content: space-between;
+  color: #888;
+  font-size: 18px;
+}
+
+.monthly-budget{
+  display: block;
+  /* border: 1px solid black; */
+  float: left;
+  width: 45%;
+  padding: 5px;
+  color: #888;
+  font-size: 18px;
 }
 
 .fixed-item-container{
@@ -105,9 +121,7 @@ form input[type="submit"]{
 .budget-div{
 }
 
-.monthly-budget{
-  display: inline-flex;
-}
+
 
 .savings{
 

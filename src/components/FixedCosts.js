@@ -43,7 +43,7 @@ export default function FixedCosts({costBudget, allFixedItems}){
             type="submit"
           ></input>
       </form>
-      <div className='item-container'>
+      {/* <div className='item-container'> */}
         {/* <h2>Fixed Income Items</h2> */}
         {/* <h3>{fixedCosts.item}</h3> */}
         {/* <div>
@@ -54,7 +54,7 @@ export default function FixedCosts({costBudget, allFixedItems}){
             />
         )}
         </div> */}
-      </div>
+      {/* </div> */}
         </div>
     )
 }
