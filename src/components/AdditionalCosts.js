@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import AdditionalCostsItems from './AdditionalCostsItems'
 
-export default function AdditionalCosts({costBudget}){
+export default function AdditionalCosts({costBudget, allAdditionalItems}){
 
     const [additionalCosts, setAdditionalCosts] = useState([{item: "", price: "", importance: ""}])
     const [additionalItems, setAdditionalItems] = useState([])
@@ -10,6 +10,8 @@ export default function AdditionalCosts({costBudget}){
         e.preventDefault()
         costBudget(additionalCosts)
         setAdditionalItems([...additionalItems, additionalCosts])
+        allAdditionalItems([...additionalItems, additionalCosts])
+
     }
 
     return(
@@ -56,16 +58,16 @@ export default function AdditionalCosts({costBudget}){
           ></input>
       </form>
       <div className="item-container">
-        <h2>Additional Income Items</h2>
+        {/* <h2>Additional Income Items</h2> */}
         {/* <h3>{fixedCosts.item}</h3> */}
-        <div>
+        {/* <div>
         {additionalItems.map(item => 
             <AdditionalCostsItems 
                 key={item.id}
                 item={item}
             />
         )}
-        </div>
+        </div> */}
       </div>
         </div>
     )

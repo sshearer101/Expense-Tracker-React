@@ -14,8 +14,8 @@ export default function Budget({newBudget}){
         <form onSubmit={handleSubmit} className='budget-form'>
         <h2 className="title">Budget</h2>
         <div>
+        <label>Set your budget:</label>
           <input
-            placeholder='set your budget'
             onChange={(e) => setFinance(e.target.value)}
           >
           </input>

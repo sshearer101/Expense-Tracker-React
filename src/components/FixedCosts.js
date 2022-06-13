@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import FixedCostsItems from './FixedCostsItems'
 
-export default function FixedCosts({costBudget}){
+export default function FixedCosts({costBudget, allFixedItems}){
 
     const [fixedCosts, setFixedCosts] = useState([{item: "", price: ""}])
     const [fixedItems, setFixedItems] = useState([])
@@ -10,8 +10,8 @@ export default function FixedCosts({costBudget}){
         e.preventDefault()
         costBudget(fixedCosts)
         setFixedItems([...fixedItems, fixedCosts])
+        allFixedItems([...fixedItems, fixedCosts])
     }
-
 
     return(
         <div>
@@ -44,16 +44,16 @@ export default function FixedCosts({costBudget}){
           ></input>
       </form>
       <div className='item-container'>
-        <h2>Fixed Income Items</h2>
+        {/* <h2>Fixed Income Items</h2> */}
         {/* <h3>{fixedCosts.item}</h3> */}
-        <div>
+        {/* <div>
         {fixedItems.map(item => 
             <FixedCostsItems 
                 key={item.id}
                 item={item}
             />
         )}
-        </div>
+        </div> */}
       </div>
         </div>
     )

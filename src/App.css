@@ -62,16 +62,43 @@ form input[type="submit"]{
 }
 
 .intro{
-  width: 50%
+  text-align: center;
+}
+.intro-header{
+  color: #888;
+  font-size: 28px;
+  font-weight: 28px;
+  margin-bottom: 30px;
+}
+
+.intro-text{
+
 }
 
 .input-divs{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.item-container{
   display: inline-flex;
+  border: 1px solid black;
+  position: absolute;
+  bottom: 30px;
+}
+
+.fixed-item-container{
+
+}
+
+.additional-item-container{
+
 }
 .fixed-cost-div{
 }
 
-.additional-costs-dive{
+.additional-costs-div{
 }
 
 
