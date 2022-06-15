@@ -4,14 +4,15 @@ import AdditionalCostsItems from './AdditionalCostsItems'
 export default function AdditionalCosts({costBudget, allAdditionalItems}){
 
     const [additionalCosts, setAdditionalCosts] = useState([{item: "", price: "", importance: ""}])
-    const [additionalItems, setAdditionalItems] = useState([])
+    // const [additionalItems, setAdditionalItems] = useState([])
 
     function handleSubmit(e){
         e.preventDefault()
         costBudget(additionalCosts)
-        setAdditionalItems([...additionalItems, additionalCosts])
-        allAdditionalItems([...additionalItems, additionalCosts])
-
+        // setAdditionalItems([...additionalItems, additionalCosts])
+        // allAdditionalItems([...additionalItems, additionalCosts])
+        allAdditionalItems(additionalCosts)
+        e.target.reset()
     }
 
     return(
@@ -24,7 +25,7 @@ export default function AdditionalCosts({costBudget, allAdditionalItems}){
             type="text"
             name="item"
             id="item"
-            onChange={(e) => setAdditionalCosts({...additionalCosts, item: e.target.value})}
+            onChange={(e) => setAdditionalCosts({...additionalCosts, [e.target.name]: e.target.value})}
             value={additionalCosts.item}
           >
           </input>
@@ -35,7 +36,7 @@ export default function AdditionalCosts({costBudget, allAdditionalItems}){
             type="text"
             name="price"
             id="price"
-            onChange={(e) => setAdditionalCosts({...additionalCosts, price: e.target.value})}
+            onChange={(e) => setAdditionalCosts({...additionalCosts, [e.target.name]: e.target.value})}
             value={additionalCosts.price}
           >
           </input>

@@ -24,12 +24,12 @@ function App() {
   }
 
   function allFixedItems(e) {
-    setFixedItemList(e)
+    setFixedItemList([...fixedItemList, e])
     console.log(e)
   }
 
   function allAdditionalItems(e) {
-    setAdditionalItemList(e)
+    setAdditionalItemList([...additionalItemList, e])
     console.log(e)
   }
 
@@ -61,14 +61,14 @@ function App() {
       <div className="item-container">
           <div className="fixed-item-container">
             <h2>Fixed Items</h2>
-            {fixedItemList.map((item) => (
-              <FixedCostsItems key={item.id} item={item} />
+            {fixedItemList.map((item, i) => (
+              <FixedCostsItems key={i} item={item} />
             ))}
           </div>
           <div className="additional-item-container">
             <h2>Additional Items</h2>
-            {additionalItemList.map((item) => (
-              <AdditionalCostsItems key={item.id} item={item} />
+            {additionalItemList.map((item, i) => (
+              <AdditionalCostsItems key={i} item={item} />
             ))}
           </div>
         </div>

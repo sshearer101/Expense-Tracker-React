@@ -3,14 +3,16 @@ import FixedCostsItems from './FixedCostsItems'
 
 export default function FixedCosts({costBudget, allFixedItems}){
 
-    const [fixedCosts, setFixedCosts] = useState([{item: "", price: ""}])
-    const [fixedItems, setFixedItems] = useState([])
+    const [fixedCosts, setFixedCosts] = useState({item: "", price: ""})
+    // const [fixedItems, setFixedItems] = useState([])
 
     function handleSubmit(e){
         e.preventDefault()
         costBudget(fixedCosts)
-        setFixedItems([...fixedItems, fixedCosts])
-        allFixedItems([...fixedItems, fixedCosts])
+        // setFixedItems([...fixedItems, fixedCosts])
+        // allFixedItems([...fixedItems, fixedCosts])
+        allFixedItems(fixedCosts)
+        e.target.reset()
     }
 
     return(
@@ -23,7 +25,7 @@ export default function FixedCosts({costBudget, allFixedItems}){
             type="text"
             name="item"
             id="item"
-            onChange={(e) => setFixedCosts({...fixedCosts, item: e.target.value})}
+            onChange={(e) => setFixedCosts({...fixedCosts, [e.target.name]: e.target.value})}
             value={fixedCosts.item}
           >
           </input>
@@ -34,7 +36,7 @@ export default function FixedCosts({costBudget, allFixedItems}){
             type="text"
             name="price"
             id="price"
-            onChange={(e) => setFixedCosts({...fixedCosts, price: e.target.value})}
+            onChange={(e) => setFixedCosts({...fixedCosts, [e.target.name]: e.target.value})}
             value={fixedCosts.price}
           >
           </input>
