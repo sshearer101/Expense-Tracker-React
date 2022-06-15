@@ -83,28 +83,34 @@ form input[type="submit"]{
 }
 
 
-.item-container{
+/* .item-container{
   display: inline-flex;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   float: right;
   width: 45%;
   padding: 5px;
   justify-content: space-between;
   color: #888;
   font-size: 18px;
-}
+} */
 
 .monthly-budget{
-  display: block;
+  /* display: block; */
   /* border: 1px solid black; */
-  float: left;
-  width: 45%;
-  padding: 5px;
+  /* float: left; */
+  /* width: 45%; */
+  /* padding: 5px;
   color: #888;
-  font-size: 18px;
+  font-size: 18px; */
+  width: 33%;
 }
 
+.budget-item-container{
+  display: flex;
+  justify-content: space-between;
+}
 .fixed-item-container{
+
 
 }
 

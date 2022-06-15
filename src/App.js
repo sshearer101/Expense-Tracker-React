@@ -13,6 +13,7 @@ function App() {
   const [fixedItemList, setFixedItemList] = useState([])
   const [additionalItemList, setAdditionalItemList] = useState([])
 
+
   function newBudget(e) {
     console.log('new budget')
     setBudget(e)
@@ -25,12 +26,19 @@ function App() {
 
   function allFixedItems(e) {
     setFixedItemList([...fixedItemList, e])
-    console.log(e)
   }
 
   function allAdditionalItems(e) {
     setAdditionalItemList([...additionalItemList, e])
     console.log(e)
+  }
+
+  function deleteFixedItem(id){
+    setFixedItemList(fixedItemList.filter((x) => x.id !== id))
+  }
+
+  function deleteAdditionalItem(id){
+    setAdditionalItemList(additionalItemList.filter((x) => x.id !== id))
   }
 
   return (
@@ -58,20 +66,8 @@ function App() {
           />
         </div>
       </div>
-      <div className="item-container">
-          <div className="fixed-item-container">
-            <h2>Fixed Items</h2>
-            {fixedItemList.map((item, i) => (
-              <FixedCostsItems key={i} item={item} />
-            ))}
-          </div>
-          <div className="additional-item-container">
-            <h2>Additional Items</h2>
-            {additionalItemList.map((item, i) => (
-              <AdditionalCostsItems key={i} item={item} />
-            ))}
-          </div>
-        </div>
+      <div className="budget-item-container">
+        
       <div className="monthly-budget">
         <h2>Your Monthly Budget</h2>
         <h3>${budget}</h3>
@@ -79,6 +75,21 @@ function App() {
         <h3>${savings}</h3>
       </div>
 
+      {/* <div className="item-container"> */}
+          <div className="fixed-item-container">
+            <h2>Fixed Items</h2>
+            {fixedItemList.map((item, i) => (
+              <FixedCostsItems key={i} item={item} deleteFixedItem={deleteFixedItem} />
+            ))}
+          </div>
+          <div className="additional-item-container">
+            <h2>Additional Items</h2>
+            {additionalItemList.map((item, i) => (
+              <AdditionalCostsItems key={i} item={item} deleteAdditionalItem={deleteAdditionalItem}/>
+            ))}
+          </div>
+        {/* </div> */}
+      </div>
       {/* <div className='savings'>
         <h2>Your Recommended Monthly Savings</h2>
         <h3>${savings}</h3>

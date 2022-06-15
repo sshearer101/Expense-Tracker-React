@@ -1,14 +1,17 @@
 import {useState} from 'react'
-import AdditionalCostsItems from './AdditionalCostsItems'
+import { v4 as uuid } from 'uuid';
+
 
 export default function AdditionalCosts({costBudget, allAdditionalItems}){
+  let unique_id = uuid()
 
-    const [additionalCosts, setAdditionalCosts] = useState([{item: "", price: "", importance: ""}])
+    const [additionalCosts, setAdditionalCosts] = useState({item: "", price: "", importance: ""})
     // const [additionalItems, setAdditionalItems] = useState([])
 
     function handleSubmit(e){
         e.preventDefault()
         costBudget(additionalCosts)
+        additionalCosts.id = unique_id
         // setAdditionalItems([...additionalItems, additionalCosts])
         // allAdditionalItems([...additionalItems, additionalCosts])
         allAdditionalItems(additionalCosts)

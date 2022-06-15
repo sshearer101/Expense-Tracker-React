@@ -1,14 +1,18 @@
 import {useState} from 'react'
-import FixedCostsItems from './FixedCostsItems'
+import { v4 as uuid } from 'uuid';
+
 
 export default function FixedCosts({costBudget, allFixedItems}){
+  let unique_id = uuid()
 
     const [fixedCosts, setFixedCosts] = useState({item: "", price: ""})
     // const [fixedItems, setFixedItems] = useState([])
 
+
     function handleSubmit(e){
         e.preventDefault()
         costBudget(fixedCosts)
+        fixedCosts.id = unique_id
         // setFixedItems([...fixedItems, fixedCosts])
         // allFixedItems([...fixedItems, fixedCosts])
         allFixedItems(fixedCosts)
